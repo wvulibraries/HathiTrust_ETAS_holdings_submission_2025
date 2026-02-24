@@ -103,16 +103,7 @@ with open('/content/drive/My Drive/Data Services/HathiTrustHoldingsLoad/2025/Sep
         LOCN = record['004']
         LOCN = str(LOCN).replace('=004 ', '')
         csv_record[LOCN] = LOCN
-        BranchName = (record['852']['b'])
-        if not BranchName:
-          csv_record[BranchName] = str("No Branch Name")
-        else:
-          csv_record[BranchName] = str(BranchName)
         Location = (record['852']['c'])
-        if not Location:
-          csv_record[Location] = str("No Location")
-        else:
-          csv_record[Location] = str(Location)
         Field863s = record.get_fields('863')
         Field863list = []
         if not Field863s:
