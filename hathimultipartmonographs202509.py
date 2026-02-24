@@ -161,7 +161,7 @@ Bibs.to_sql('Bibs', conn, if_exists='replace', index = False)
 
 LHRs.to_sql('LHRs', conn, if_exists='replace', index = False)
 
-LHRs = pd.read_sql("""SELECT [LOCN], [LCN], [BranchName], [Location], [field8763], [field866], [field863] FROM LHRs WHERE [LHRLDR06] Like 'v' AND [Location] Not Like '%Micro%'""", conn)
+LHRs = pd.read_sql("""SELECT [LOCN], [LCN], [Location], [field8763], [field866], [field863] FROM LHRs WHERE [LHRLDR06] Like 'v' AND [Location] Not Like '%Micro%'""", conn)
 
 LHRs.to_sql('LHRs', conn, if_exists='replace', index = False)
 
