@@ -140,11 +140,11 @@ with open('/content/drive/My Drive/Data Services/HathiTrustHoldingsLoad/2025/Sep
             else:
               for i in enum_chron:
                 EnumChronList.append(str(i))
-        csv_out.writerow([LCN, LDR06, LOCN, BranchName, Location, Field863list, Field866list, EnumChronList])
+        csv_out.writerow([LCN, LDR06, LOCN, Location, Field863list, Field866list, EnumChronList])
       except KeyError:
             pass
 
-colnamesc = ['LCN', 'LDR06', 'LOCN', 'BranchName', 'Location', 'field863', 'field866', 'field8763']
+colnamesc = ['LCN', 'LDR06', 'LOCN', 'Location', 'field863', 'field866', 'field8763']
 LHRs = pd.read_csv('/content/drive/My Drive/Data Services/HathiTrustHoldingsLoad/2025/SeptVersion/MultipartMonoProtoLHRs.csv', names=colnamesc, low_memory=False)
 column_headers = list(LHRs.columns.values)
 print(column_headers)
